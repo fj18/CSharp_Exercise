@@ -1,0 +1,26 @@
+﻿<Window x:Class="局域网IP扫描实验.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:局域网IP扫描实验"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="660" Width="650">
+    <StackPanel>
+        <GroupBox Header="扫描的IP地址范围" Height="75">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="地址前缀：" Margin="0" VerticalAlignment="Center"></Label>
+                <TextBox x:Name="preAdTextBox" Width="100" Height="20"></TextBox>
+                <Label Content="起始值：" VerticalAlignment="Center" Margin="20 0 0 0"></Label>
+                <TextBox x:Name="firstAdTextBox" Width="100" Height="20"></TextBox>
+                <Label Content="终止值：" VerticalAlignment="Center" Margin="20 0 0 0"></Label>
+                <TextBox x:Name="lastAdTextBox" Width="100" Height="20"></TextBox>
+                <Button x:Name="start" Content="开始扫描" VerticalAlignment="Center" Margin="30 0 0 0" Click="Button_Click" IsDefault="True"></Button>
+            </StackPanel>
+        </GroupBox>
+        <Label x:Name="errorInfo" Content="IP地址有误，请更正！" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="Red" Width="650" Height="0"></Label>
+        <GroupBox Header="扫描信息">
+            <ListBox  x:Name="results" Height="500" ></ListBox>
+        </GroupBox>
+    </StackPanel>
+</Window>
