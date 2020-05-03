@@ -1,0 +1,25 @@
+﻿<Page x:Class="Client.Unit7_ex.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client.Unit7_ex"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="350"
+      Title="Page1">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label Content="basicHttpBinding的入门示例1-服务协定" HorizontalAlignment="Center" FontSize="15"></Label>
+        <TextBlock x:Name="textBlock" Grid.Row="1"></TextBlock>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="sayHelloBtn" Content="调用SayHello" Height="30" Margin="0 0 30 0" Click="sayHelloBtn_Click"></Button>
+            <Button x:Name="allServicesBtn" Content="调用多个服务操作" Click="allServicesBtn_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
