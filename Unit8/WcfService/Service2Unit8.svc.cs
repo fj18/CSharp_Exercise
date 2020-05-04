@@ -11,8 +11,21 @@ namespace WcfService
 	// 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 Service2.svc 或 Service2.svc.cs，然后开始调试。
 	public class Service2Unit8 : IService2Unit8
 	{
-		public void DoWork()
+		private Students students = new Students();
+		public void Add(Student student)
 		{
+			students.StudentList.Add(student.ID,student);
+		}
+
+		public void Remove(int n)
+		{
+			if (students.StudentList.Keys.Contains(n))
+				students.StudentList.Remove(n);
+		}
+
+		public string GetStudentsValue()
+		{
+			return students.ToString();
 		}
 	}
 }

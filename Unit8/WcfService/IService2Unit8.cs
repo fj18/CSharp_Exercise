@@ -11,7 +11,11 @@ namespace WcfService
 	[ServiceContract]
 	public interface IService2Unit8
 	{
+		[OperationContract(IsOneWay = true)]
+		void Add(Student student);
+		[OperationContract(IsOneWay = true)]
+		void Remove(int n);
 		[OperationContract]
-		void DoWork();
+		string GetStudentsValue();
 	}
 }

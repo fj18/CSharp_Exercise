@@ -11,8 +11,17 @@ namespace WcfService
 	// 注意: 为了启动 WCF 测试客户端以测试此服务，请在解决方案资源管理器中选择 Service3.svc 或 Service3.svc.cs，然后开始调试。
 	public class Service3Unit8 : IService3Unit8
 	{
-		public void DoWork()
+		private IService3Unit8Callback callback;
+		public Service3Unit8()
 		{
+			OperationContext context = OperationContext.Current;
+			callback = context.GetCallbackChannel<IService3Unit8Callback>();
+		}
+		public void Login(string s)
+		{
+			callback.Receive("Hello," + s);
+			System.Threading.Thread.Sleep(2000);
+			callback.Receive("你好，我是服务器");
 		}
 	}
 }
